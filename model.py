@@ -227,7 +227,7 @@ def add_model_flags(parser):
       "compute cost. Must devide 198. Defaults to 33.")
   parser.add_argument(
       "--sample_rate_hz",
-      default=16000,
+      default=48000, # to work with our microphones
       help="Optional: Sample Rate. The model expects 16000. "
       "However you may alternative sampling rate that may or may not work."
       "If you specify 48000 it will be downsampled to 16000.")
@@ -235,7 +235,7 @@ def add_model_flags(parser):
 def classify_audio(audio_device_index, interpreter, labels_file,
                    commands_file=None,
                    result_callback=None, dectection_callback=None,
-                   sample_rate_hz=16000,
+                   sample_rate_hz=48000,
                    negative_threshold=0.6, num_frames_hop=33):
   """Acquire audio, preprocess, and classify."""
   # Initialize recorder.
