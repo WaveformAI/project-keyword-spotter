@@ -15,19 +15,15 @@ Install pyenv (if not present)
 
 ```pyenv local coral```
 
-## Packages to install
-*(replace nala with apt if you don't have nala)*
+## Driver Packages to install
 
 ONLY ONE OF THE FOLLOWING
 
-```sudo nala install libedgetpu1-std``` <- for standard performance
+```sudo apt-get install libedgetpu1-std``` <- for standard performance
 
-```sudo nala install libedgetpu-max``` <- for maximum clock speed
-
-AND
-
-```sudo nala install libasound libasound2-dev portaudio19-dev```
+```sudo apt-get install libedgetpu-max``` <- for maximum clock speed
 
 ## Python libraries and system packages
 
-Run ./install_requirements.sh to install everything else
+Simply run install_requirements.sh
+
