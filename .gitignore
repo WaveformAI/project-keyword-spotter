@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 # Byte-compiled / optimized / DLL files
+=======
+#Git Ignore file
+
+>>>>>>> c796fbec329888a1d227bb43546eaf512e0b6503
 __pycache__/
 *.py[cod]
 *$py.class
 
+<<<<<<< HEAD
 # C extensions
 *.so
 
@@ -105,3 +111,15 @@ venv.bak/
 
 # vscode stuff
 /.vscode
+=======
+venv/
+*.venv
+env/
+*.env
+
+.vscode/
+.idea/
+
+.DS_Store
+Thumbs.db
+>>>>>>> c796fbec329888a1d227bb43546eaf512e0b6503
