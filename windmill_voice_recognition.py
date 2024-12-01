@@ -234,7 +234,7 @@ def add_model_flags(parser):
       "However you may alternative sampling rate that may or may not work."
       "If you specify 48000 it will be downsampled to 16000.")
 
-def start_audio_recorder(audio_device_index, sample_rate_hz=16000):
+def start_audio_recorder(audio_device_index, sample_rate_hz=16000): # Edited function in keyword library; set up Pyaudio
   """Acquire audio, preprocess, and classify."""
   # Initialize recorder.
   AUDIO_SAMPLE_RATE_HZ = sample_rate_hz
@@ -249,7 +249,8 @@ def start_audio_recorder(audio_device_index, sample_rate_hz=16000):
       device_index=audio_device_index)
   return recorder
 
-def run_model(interpreter, labels_file,
+# edited function in keyword library, run the TPU model
+def run_model(interpreter, labels_file, 
                    commands_file=None,
                    result_callback=None, detection_callback=None,
                    negative_threshold=0.6, num_frames_hop=33, recorder=None, break_condition=lambda : True):  
@@ -262,9 +263,9 @@ def run_model(interpreter, labels_file,
   logger.info("Loaded commands: %s", str(commands))
   logger.info("Recording")
   
-  with recorder:
+  with recorder: 
     last_detection = -1
-    while break_condition():
+    while break_condition(): # ... code continues unedited, gathering data until break_condition() (i.e. microphone_enabled lambda function) return false
       spectrogram = feature_extractor.get_next_spectrogram(recorder)
       set_input(interpreter, spectrogram.flatten())
       interpreter.invoke()
