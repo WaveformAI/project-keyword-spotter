@@ -44,6 +44,7 @@ def print_results(result, commands, labels, top=3):
   sys.stdout.write("\n")
 
 
+
 def main():
   parser = argparse.ArgumentParser()
   model.add_model_flags(parser)
